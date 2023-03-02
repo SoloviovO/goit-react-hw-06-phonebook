@@ -21,7 +21,7 @@ const contactsSlice = createSlice({
   },
 });
 
-export const contsctsReducer = contactsSlice.reducer;
+export const contactsReducer = contactsSlice.reducer;
 
 export const { addContacts, deleteContacts, filterContacts } =
   contactsSlice.actions;

@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
-import PropTypes from 'prop-types';
 import css from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContacts } from 'redux/contscts/contactsSlice';
+import { addContacts } from 'redux/contacts/contactsSlice';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(state => state.contacts);
   const dispatch = useDispatch();
 
   const handleSubmitForm = event => {
@@ -79,8 +78,4 @@ export const ContactForm = () => {
       </button>
     </form>
   );
-};
-
-ContactForm.propTypes = {
-  onSubmit: PropTypes.func,
 };
